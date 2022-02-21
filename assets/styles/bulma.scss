@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+// Set your brand colors
+$purple: #8A4D76;
+$darker-teal: #004242;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+$secondary: #232323;
+$teal: #008E8E;
+
+// Update Bulma's global variables
+$family-sans-serif: "EB Garamond", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: #EFF0EB;
+$link: $secondary;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+$link-hover: #008E8E;
+
+// Update some of Bulma's component variables
+$body-background-color: $secondary;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+// Import only what you need from Bulma
+@import "~bulma/sass/base/_all.sass";
+@import "~bulma/sass/components/_all.sass";
+@import "~bulma/sass/elements/_all.sass";
+@import "~bulma/sass/form/_all.sass";
+@import "~bulma/sass/grid/_all.sass";
+@import "~bulma/sass/helpers/_all.sass";
+@import "~bulma/sass/layout/_all.sass";
+@import "~bulma/sass/utilities/_all.sass";
+
+
+@media (orientation: portrait) {
+
+    .landscape {
+        visibility: collapse;
+        position: absolute;
+        top: -50%;
+    }
+
+    .portrait {
+        visibility: visible;
+    }
+
+    #gallery {
+
+        width: 100%;
+        margin-top: 100px;
+
+        img {
+            width: 85vw;
+            box-shadow: 2px 3px 33px -9px rgba(0,0,0,0.55);
+        }  
+    } 
+
+}
+
+@media (orientation: landscape) {
+
+    .landscape {
+        visibility: visible;
+    }
+
+    .portrait {
+        visibility: hidden;
+        position: absolute;
+        top: -50%;
+    }
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+body {
+
+    font-family: 'Commissioner', sans-serif;
+    
+    p{
+        text-decoration: none;
+        font-size: 0.750rem;
+        font-weight: 500;
+        color: $primary;
+    }
+    
+    }
+
+aside {
+    position: fixed;
+    height: 100vh;
+    opacity: 0.9;
+    background-color: $primary;
+    z-index: 1030;
+    width: auto;
+    min-width: 110px;
+    margin-left: 1em;
+    box-shadow: 0px 12px 17px rgba(0, 0, 0, 0.14), 0px 5px 22px rgba(0, 0, 0, 0.12), 0px 7px 8px rgba(0, 0, 0, 0.2);
+    top: 0;
+
+    a {
+        color: $secondary;
+    }
+
+    hr {
+        width: 50%;
+        opacity: 0.8;
+        background-color: $darker-teal;
+        width: 66%;
+        height: 1px;
+    }
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 50px;
+    box-shadow: 0px 12px 17px rgba(0, 0, 0, 0.14), 0px 5px 22px rgba(0, 0, 0, 0.12), 0px 7px 8px rgba(0, 0, 0, 0.2);
+
+    a {
+        color: $secondary;
+    }
+}
+
+section {
+    padding-left: 10em;
+    overflow-y: hidden;
+    height: 90vh;
+    margin: 5vh 0 5vh 0;
+    scrollbar-width: none;
+
+    ::-webkit-scrollbar{
+        display: none;
+    }
+
+
+
+    article {
+        color: $primary;
+        margin-left: 1rem;
+        margin-right: 1rem;
+            
+            .img {
+                box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.14), 0px 3px 3px rgba(0, 0, 0, 0.12), 0px 1px 8px rgba(0, 0, 0, 0.2);
+                max-height: 88vh;
+                max-width: 80vw;
+    
+            }
+
+    }  
+}
+
+.media-scroller {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 80vw;
+    gap: 10px;
+    padding-left: 7.5vw;
+    height: 90vh;
+    margin-top: 50px;
+    padding-top: 25px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    overflow-y: hidden;
+
+        ::-webkit-scrollbar{
+            display: none;
+        }
+
+}
+
+.media-element {
+    display: grid;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.14), 0px 3px 3px rgba(0, 0, 0, 0.12), 0px 1px 8px rgba(0, 0, 0, 0.2);
+    height: auto;
+    
+}
+
+.media-element > img {
+    inline-size: 100%;
+    height: 80vh;
+    object-fit: cover;
+    box-shadow: 2px 3px 33px -9px rgba(0,0,0,0.55);
+}
+

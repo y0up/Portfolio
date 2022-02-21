@@ -6,14 +6,24 @@
     <h1>Picture</h1>
 
     <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Image
+                </th>
+            </tr>
+        </thead>
         <tbody>
             <tr>
-                <th>Id</th>
                 <td>{{ picture.id }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td><img src="\uploads\pictures\{{ picture.fileName }}" alt=""></td>
+                <td>
+                    <figure class="image is-square is-fullwidth">
+                        <img src="\uploads\pictures\{{ picture.fileName }}" alt="">
+                    </figure>
+                </td>
             </tr>
         </tbody>
     </table>

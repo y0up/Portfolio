@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+{% block header %}
+{% include "main/_header.html.twig" %}
+{% endblock %}
+
+    <section class="is-flex landscape">
+        {% for picture in pictures %}
+            <article class="is-flex is-align-items-center landscape">
+
+                    <img src="\uploads\pictures\{{ picture.fileName }}" alt="" class="img">
+
+            </article>
+        {% endfor %}
+    </section>
+
+{% if app.request.attributes.get('_route') == 'home' %}
+    <div class="media-scroller portrait">
+        {% for category in categories %}
+            {% set picture = "" %}
+            {% for categorypicture in category.pictures %}
+                {% set picture = categorypicture %} 
+            {% endfor %}
+            <div class="media-element">
+                <div style="position: relative; background-image: url(../uploads/pictures/{{picture.fileName }});background-size: cover;
+                background-position: center;">
+                <a href="{{ path('{slug}', {'slug' : category.slug}) }}">
+                    <div class="is-flex is-align-items-center is-flex-direction-column is-justify-content-flex-end" style="width: 100%;position: absolute; bottom:0; background: rgb(0,0,0);
+                    background: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5214286398153012) 49%, rgba(255,255,255,0) 100%); height: 100px;">
+                        <h5>{{category.name}}</h5>
+                        <p>{{category.pictures|length}} photo</p>
+                    </div>
+                </a>
+                        
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+
+    <div class="is-flex is-align-items-center is-flex-direction-column portrait" id="gallery">
+        {% for picture in pictures %}
+            <div class="">
+                <img src="\uploads\pictures\{{ picture.fileName }}" alt="" class="">
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% endblock %}

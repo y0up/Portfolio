@@ -1,4 +1,6 @@
 {{ form_start(form) }}
     {{form_row(form.fileName)}}
+    {{form_row(form.name)}}
+    {{form_row(form.Categories)}}
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

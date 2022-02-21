@@ -9,7 +9,8 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>FileName</th>
+                <th>Photo</th>
+                <th>categories</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -17,7 +18,17 @@
         {% for picture in pictures %}
             <tr>
                 <td>{{ picture.id }}</td>
-                <td>{{ picture.fileName }}</td>
+                <td>
+                    <figure class="image is-square is-fullwidth">
+                        <img src="\uploads\pictures\{{ picture.fileName }}" alt="">
+                    </figure>
+                </td>
+                <td>
+                    {% for picturecategory in picture.categories %}
+                    {{picturecategory.name}}
+                        
+                    {% endfor %}
+                </td>
                 <td>
                     <a href="{{ path('picture_show', {'id': picture.id}) }}">show</a>
                     <a href="{{ path('picture_edit', {'id': picture.id}) }}">edit</a>
