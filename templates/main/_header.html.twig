@@ -9,8 +9,8 @@
            <a href="{{ path('{slug}', {'slug' : category.slug}) }}">{{ category.name}}</a> 
         {% endfor %}
         <hr>
-        <a href="">A propos</a>
-        <a href="">Contact</a>
+        <a href="{{ path('about') }}">A propos</a>
+        <a href="{{ path('contact') }}">Contact</a>
     </div>
     <div class="navbar-brand">
         <a class="navbar-item" href="https://www.instagram.com/alexisdiangelophotography/">
@@ -23,7 +23,7 @@
     <div class="navbar-brand is-flex is-justify-content-space-between is-align-items-center">
         <div class="navbar-start">
             <div class="navbar-item">
-                <a href="">A Propos</a>
+                <a href="{{ path('about') }}">A Propos</a>
             </div>
         </div>
         <a class="navbar-item" href="{{ path('home') }}">
@@ -31,7 +31,7 @@
         </a>
         <div class="navbar-end">
             <div class="navbar-item">
-                <a href="">Contact</a>
+                <a href="{{ path('contact') }}">Contact</a>
             </div>
         </div>
     </div>

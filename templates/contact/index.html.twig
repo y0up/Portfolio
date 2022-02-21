@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+
+{% block header %}
+{% include "main/_header.html.twig" %}
+{% endblock %}
+
+<section class="columns landscape is-flex is-align-items-center">
+    <div class="column">
+        <h1 class="title is-spaced">Me contacter</h1>
+        <h2 class="subtitle is-6">N'hésitez pas à me contacter pour toutes demandes, que ce soit pour une prestation, un tirage de l'une de mes photos où bien juste pour donner un avis!</h2>
+        
+    </div>
+    <div class="column is-narrow">
+        <div class="block" style="width: 1px; height: 60vh; background-color:#eff0eb3c;"></div>
+    </div>
+    <div class="column">
+        {% include "contact/_form.html.twig" %}
+    </div>
+</section>
+
+<div class="portrait contact is-flex is-align-items-center is-flex-direction-column">
+    <div class="block">
+        <h1 class="title is-spaced">Me contacter</h1>
+        <h2 class="subtitle is-6">N'hésitez pas à me contacter pour toutes demandes, que ce soit pour une prestation, un tirage de l'une de mes photos où bien juste pour donner un avis!</h2>
+    </div>
+    <div class="block">
+        {% include "contact/_form.html.twig" %}
+    </div>
+</div>
+
+  
+{% endblock %}

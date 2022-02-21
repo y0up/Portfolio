@@ -21,7 +21,7 @@ class MainController extends AbstractController
         ]);
     }
 
-    #[Route('/{slug<^((?!login|register|verify).)*$>}', name: '{slug}')]
+    #[Route('/{slug<^((?!login|register|verify|_sentry-test|contact).)*$>}', name: '{slug}')]
     public function menu($slug, CategoryRepository $categoryRepo): Response
     {
         $categories = $categoryRepo->findAll();
@@ -32,4 +32,5 @@ class MainController extends AbstractController
             'categories' => $categories,
         ]);
     }
+
 }

@@ -21,6 +21,9 @@ $link: $secondary;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 $link-hover: #008E8E;
+$title-color: $primary;
+$subtitle-color: $primary;
+$label-color: $primary;
 
 // Update some of Bulma's component variables
 $body-background-color: $secondary;
@@ -175,7 +178,11 @@ section {
         ::-webkit-scrollbar{
             display: none;
         }
+}
 
+.contact {
+    margin-top: 50px;
+    padding-top: 25px;
 }
 
 .media-element {

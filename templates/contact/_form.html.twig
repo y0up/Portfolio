@@ -1,0 +1,38 @@
+<div class="contact-form" style="padding-right: 5em;">
+        
+    {{ form_start(contact_form) }}
+
+    <div class="field">
+        <label class="label is-small">Name</label>
+        <div class="control">
+            <input class="input" type="text" name="{{ field_name(contact_form.fullName) }}">
+        </div>
+      </div>
+    
+    
+    <div class="field">
+        <div class="control has-icons-left has-icons-right">
+            <label class="label is-small">Email</label>
+            <input class="input" name="{{ field_name(contact_form.email) }}" type="email">
+            <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+            </span>
+        </div>
+    </div>
+    
+    <div class="field">
+        <div class="control">
+            <label class="label is-small">Message</label>
+            <textarea class="textarea" name="{{ field_name(contact_form.message) }}" ></textarea>
+        </div>
+    </div>
+    
+    <div class="field">
+      <div class="control">
+        <button class="button is-primary">Envoyer</button>
+      </div>
+    </div>
+
+    {{ form_end(contact_form) }}
+
+</div>
