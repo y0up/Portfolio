@@ -89,8 +89,8 @@ class PictureController extends AbstractController
             
             if ($uploadedPicture) {
                 $newFileName = $pictureManager->upload($uploadedPicture);
-                $picture->setFileName($newFileName);
                 $pictureManager->delete($picture);
+                $picture->setFileName($newFileName);
             }
 
             $entityManager->persist($picture);

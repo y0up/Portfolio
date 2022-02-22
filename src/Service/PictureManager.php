@@ -37,7 +37,7 @@ class PictureManager
     {
         $fileName = $toDeleteFile->getFileName();
         if (unlink($this->getTargetDirectory().'/'.$fileName)) {
-            echo 'The file ' . $fileName . ' was deleted successfully!';
+            dump('The file ' . $fileName . ' was deleted successfully!');
         } else {
             echo 'There was a error deleting the file ' . $fileName;
         }
