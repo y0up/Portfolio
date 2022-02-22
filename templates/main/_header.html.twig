@@ -5,7 +5,7 @@
         </a>
     </div>
     <div class="is-flex is-flex-direction-column is-align-items-center">
-        {% for category in categories %}
+        {% for category in categories|sort((a, b) => a.name <=> b.name) %}
            <a href="{{ path('{slug}', {'slug' : category.slug}) }}">{{ category.name}}</a> 
         {% endfor %}
         <hr>
