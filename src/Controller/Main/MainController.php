@@ -21,16 +21,20 @@ class MainController extends AbstractController
         ]);
     }
 
-    #[Route('/{slug<^((?!login|register|verify|_sentry-test|contact).)*$>}', name: '{slug}')]
+    #[Route('/{slug<^((?!login|register|verify|_sentry-test|contact|admin).)*$>}', name: '{slug}')]
     public function menu($slug, CategoryRepository $categoryRepo): Response
     {
         $categories = $categoryRepo->findAll();
         $category = $categoryRepo->findOneBy(['slug' => $slug]);
-        $pictures = $category->getPictures();
-        return $this->render('main/index.html.twig', [
-            'pictures' => $pictures,
-            'categories' => $categories,
-        ]);
+        if ($category) {
+            $pictures = $category->getPictures();
+            return $this->render('main/index.html.twig', [
+                'pictures' => $pictures,
+                'categories' => $categories,
+            ]);
+        } else {
+            return $this->redirectToRoute('home');
+        }
     }
 
 }
