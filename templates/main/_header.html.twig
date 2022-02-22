@@ -1,7 +1,9 @@
-<aside class="menu is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center landscape">
+<aside class="menu landscape">
     <div class="navbar-brand">
         <a class="navbar-item" href="{{ path('home') }}">
-            <img src="{{ asset('build/logo/shoyoup.png') }}" >
+            <figure class="image">
+                <img src="{{ asset('build/logo/shoyoup.png') }}" >
+            </figure>
         </a>
     </div>
     <div class="is-flex is-flex-direction-column is-align-items-center">
@@ -19,7 +21,7 @@
     </div>
 </aside>
 
-<nav class="navbar portrait" role="navigation" aria-label="main navigation">
+<nav class="navbar is-fixed-top portrait" role="navigation" aria-label="main navigation">
     <div class="navbar-brand is-flex is-justify-content-space-between is-align-items-center">
         <div class="navbar-start">
             <div class="navbar-item">
